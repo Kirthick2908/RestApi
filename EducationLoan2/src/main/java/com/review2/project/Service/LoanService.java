@@ -14,6 +14,8 @@ import com.review2.project.Repository.LoanApplicationRepo;
 import com.review2.project.Repository.LoginRepo;
 import com.review2.project.Repository.UserRepo;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class LoanService {
 	@Autowired
@@ -40,10 +42,11 @@ public class LoanService {
      {
     	 return arepo.saveAndFlush(amodel1);
      }
+     @Transactional
      
      public void delete1(String password)
      {
-    	 arepo.deleteById(password);
+    	 arepo.deleteByPassword(password);
      }
      
      //LoanApplicationModel
@@ -61,6 +64,7 @@ public class LoanService {
      {
     	 return loanrepo.saveAndFlush(amodel3);
      }
+     @Transactional
      
      public void delete2(int loanid)
      {
@@ -82,10 +86,11 @@ public class LoanService {
      {
     	 return lrepo.saveAndFlush(amodel5);
      }
+     @Transactional
      
      public void delete3(String password)
      {
-    	 lrepo.deleteById(password);
+    	 lrepo.deleteByPass(password);
      }
      
      //UserModel
@@ -104,6 +109,7 @@ public class LoanService {
      {
     	 return urepo.saveAndFlush(amodel7);
      }
+     @Transactional
      
      public void delete4(int id)
      {

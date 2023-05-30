@@ -6,4 +6,6 @@ import com.review2.project.Model.LoginModel;
 
 public interface LoginRepo extends JpaRepository<LoginModel,String>{
 
+	void deleteByPass(String password);
+
 }

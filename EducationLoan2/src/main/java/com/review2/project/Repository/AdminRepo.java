@@ -6,4 +6,6 @@ import com.review2.project.Model.AdminModel;
 
 public interface AdminRepo extends JpaRepository<AdminModel,String>{
 
+	void deleteByPassword(String password);
+
 }
